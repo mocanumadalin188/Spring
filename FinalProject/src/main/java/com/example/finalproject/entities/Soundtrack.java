@@ -56,4 +56,48 @@ public class Soundtrack {
     public void setSongs(Set<Song> songs) {
         this.songs = songs;
     }
+
+
+    public static final class SoundtrackBuilder {
+        private long id;
+        private String name;
+        private Movie movie;
+        private Set<Song> songs;
+
+        private SoundtrackBuilder() {
+        }
+
+        public static SoundtrackBuilder aSoundtrack() {
+            return new SoundtrackBuilder();
+        }
+
+        public SoundtrackBuilder withId(long id) {
+            this.id = id;
+            return this;
+        }
+
+        public SoundtrackBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public SoundtrackBuilder withMovie(Movie movie) {
+            this.movie = movie;
+            return this;
+        }
+
+        public SoundtrackBuilder withSongs(Set<Song> songs) {
+            this.songs = songs;
+            return this;
+        }
+
+        public Soundtrack build() {
+            Soundtrack soundtrack = new Soundtrack();
+            soundtrack.setId(id);
+            soundtrack.setName(name);
+            soundtrack.setMovie(movie);
+            soundtrack.setSongs(songs);
+            return soundtrack;
+        }
+    }
 }

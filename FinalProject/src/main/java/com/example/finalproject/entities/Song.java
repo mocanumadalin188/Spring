@@ -53,4 +53,47 @@ public class Song {
     public void setSoundtracks(Set<Soundtrack> soundtracks) {
         this.soundtracks = soundtracks;
     }
+
+    public static final class SongBuilder {
+        private long id;
+        private String name;
+        private @Pattern(regexp = "^[A-Za-z]*$", message = "Invalid artist name") String artist;
+        private Set<Soundtrack> soundtracks;
+
+        private SongBuilder() {
+        }
+
+        public static SongBuilder aSong() {
+            return new SongBuilder();
+        }
+
+        public SongBuilder withId(long id) {
+            this.id = id;
+            return this;
+        }
+
+        public SongBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public SongBuilder withArtist(String artist) {
+            this.artist = artist;
+            return this;
+        }
+
+        public SongBuilder withSoundtracks(Set<Soundtrack> soundtracks) {
+            this.soundtracks = soundtracks;
+            return this;
+        }
+
+        public Song build() {
+            Song song = new Song();
+            song.setId(id);
+            song.setName(name);
+            song.setArtist(artist);
+            song.setSoundtracks(soundtracks);
+            return song;
+        }
+    }
 }

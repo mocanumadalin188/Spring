@@ -27,7 +27,7 @@ public class SoundtrackServiceImpl implements SoundtrackService {
             log.error(SoundtrackErrorMessages.SOUNDTRACK_ALREADY_FOUND + " {}", soundtrack.getName());
             throw new EntityAlreadyExistsException(SoundtrackErrorMessages.SOUNDTRACK_ALREADY_FOUND + soundtrack.getName());
         }
-        soundtrackRepository.save(soundtrack);
+        soundtrackRepository.save(build(soundtrack));
         return soundtrack;
     }
 
@@ -59,5 +59,9 @@ public class SoundtrackServiceImpl implements SoundtrackService {
     @Override
     public Soundtrack findByName(String name) {
         return soundtrackRepository.findByName(name).orElse(null);
+    }
+
+    private Soundtrack build(Soundtrack soundtrack) {
+        return Soundtrack.SoundtrackBuilder.aSoundtrack().withName(soundtrack.getName()).withMovie(soundtrack.getMovie()).withSongs(soundtrack.getSongs()).build();
     }
 }

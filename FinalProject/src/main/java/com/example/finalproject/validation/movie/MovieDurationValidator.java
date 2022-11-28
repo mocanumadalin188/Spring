@@ -16,3 +16,6 @@ public class MovieDurationValidator implements ConstraintValidator<MovieDuration
                 duration.toString().matches("[0-9]*");
     }
 }
+
+// can also call it manually Set<ConstraintViolation<Class>> violations = validator.validate(Class)
+// inject SmartValidator;

@@ -16,3 +16,6 @@ public @interface MovieDurationConstraint {
 
     Class<? extends Payload>[] payload() default {};
 }
+
+// can also call it manually Set<ConstraintViolation<Class>> violations = validator.validate(Class)
+// inject SmartValidator;

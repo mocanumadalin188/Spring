@@ -26,7 +26,7 @@ public class SongServiceImpl implements SongService {
             log.error(SongErrorMessages.SONG_ALREADY_FOUND + " {}", song.getName());
             throw new EntityAlreadyExistsException(SongErrorMessages.SONG_ALREADY_FOUND + song.getName());
         }
-        songRepository.save(song);
+        songRepository.save(build(song));
         return song;
     }
 
@@ -44,5 +44,9 @@ public class SongServiceImpl implements SongService {
     @Override
     public Song findByName(String name) {
         return songRepository.findByName(name).orElse(null);
+    }
+
+    private Song build(Song song) {
+        return Song.SongBuilder.aSong().withName(song.getName()).withArtist(song.getArtist()).withSoundtracks(song.getSoundtracks()).build();
     }
 }

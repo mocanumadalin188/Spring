@@ -10,8 +10,13 @@ public class UserPasswordValidator implements ConstraintValidator<UserPasswordCo
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
 
+    // TODO implement
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
         return true;
     }
 }
+
+// can also call it manually Set<ConstraintViolation<Class>> violations = validator.validate(Class)
+// inject SmartValidator;
+

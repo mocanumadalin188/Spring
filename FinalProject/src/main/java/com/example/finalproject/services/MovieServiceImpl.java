@@ -28,7 +28,7 @@ public class MovieServiceImpl implements MovieService {
             log.error(MovieErrorMessages.MOVIE_ALREADY_FOUND + " {}", movie.getName());
             throw new EntityAlreadyExistsException(MovieErrorMessages.MOVIE_ALREADY_FOUND + movie.getName());
         }
-        movieRepository.save(movie);
+        movieRepository.save(build(movie));
         return movie;
     }
 
@@ -66,5 +66,17 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public List<Movie> findAll() {
         return movieRepository.findAll();
+    }
+
+    private Movie build(Movie movie) {
+        return Movie.MovieBuilder
+                .aMovie()
+                .withName(movie.getName())
+                .withActors(movie.getActors())
+                .withType(movie.getType())
+                .withDuration(movie.getDuration())
+                .withSoundtrack(movie.getSoundtrack())
+                .withCompany(movie.getCompany())
+                .build();
     }
 }

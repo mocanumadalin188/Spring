@@ -26,7 +26,7 @@ public class CompanyServiceImpl implements CompanyService {
             log.error(CompanyErrorMessages.COMPANY_ALREADY_FOUND + " {}", company.getName());
             throw new EntityAlreadyExistsException(CompanyErrorMessages.COMPANY_ALREADY_FOUND + company.getName());
         }
-        companyRepository.save(company);
+        companyRepository.save(build(company));
         return company;
     }
 
@@ -44,5 +44,13 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Company findByName(String name) {
         return companyRepository.findByName(name).orElse(null);
+    }
+
+    private Company build(Company company) {
+        return Company.CompanyBuilder
+                .aCompany()
+                .withMovies(company.getMovies())
+                .withName(company.getName())
+                .build();
     }
 }

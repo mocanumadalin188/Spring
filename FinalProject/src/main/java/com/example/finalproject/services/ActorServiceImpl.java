@@ -29,7 +29,7 @@ public class ActorServiceImpl implements ActorService {
             log.error(ActorErrorMessages.ACTOR_ALREADY_FOUND + " {}", actor.getEmail());
             throw new EntityAlreadyExistsException(ActorErrorMessages.ACTOR_ALREADY_FOUND + actor.getEmail());
         }
-        actorRepository.save(actor);
+        actorRepository.save(build(actor));
         return actor;
     }
 
@@ -71,5 +71,15 @@ public class ActorServiceImpl implements ActorService {
         List<Actor> actors = findAll();
 
         return actors.stream().filter(a -> a.getMovies().size() >= nrOfMovies).collect(Collectors.toList());
+    }
+
+    private Actor build(Actor actor) {
+        return Actor.ActorBuilder
+                .anActor()
+                .withAge(actor.getAge())
+                .withEmail(actor.getEmail())
+                .withName(actor.getName())
+                .withMovies(actor.getMovies())
+                .build();
     }
 }

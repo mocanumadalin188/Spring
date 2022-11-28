@@ -94,4 +94,69 @@ public class Movie {
     public void setSoundtrack(Soundtrack soundtrack) {
         this.soundtrack = soundtrack;
     }
+
+
+    public static final class MovieBuilder {
+        private long id;
+        private @Pattern(regexp = "^[A-Za-z]*$", message = "Invalid name") String name;
+        private @Pattern(regexp = "^[A-Za-z]*$", message = "Invalid movie type") String type;
+        private int duration;
+        private Set<Actor> actors;
+        private Company company;
+        private Soundtrack soundtrack;
+
+        private MovieBuilder() {
+        }
+
+        public static MovieBuilder aMovie() {
+            return new MovieBuilder();
+        }
+
+        public MovieBuilder withId(long id) {
+            this.id = id;
+            return this;
+        }
+
+        public MovieBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public MovieBuilder withType(String type) {
+            this.type = type;
+            return this;
+        }
+
+        public MovieBuilder withDuration(int duration) {
+            this.duration = duration;
+            return this;
+        }
+
+        public MovieBuilder withActors(Set<Actor> actors) {
+            this.actors = actors;
+            return this;
+        }
+
+        public MovieBuilder withCompany(Company company) {
+            this.company = company;
+            return this;
+        }
+
+        public MovieBuilder withSoundtrack(Soundtrack soundtrack) {
+            this.soundtrack = soundtrack;
+            return this;
+        }
+
+        public Movie build() {
+            Movie movie = new Movie();
+            movie.setId(id);
+            movie.setName(name);
+            movie.setType(type);
+            movie.setDuration(duration);
+            movie.setActors(actors);
+            movie.setCompany(company);
+            movie.setSoundtrack(soundtrack);
+            return movie;
+        }
+    }
 }

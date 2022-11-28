@@ -14,7 +14,6 @@ import javax.transaction.Transactional;
 @Transactional
 @Slf4j
 public class UserServiceImpl implements UserService {
-
     @Autowired
     private UserRepository userRepository;
 
@@ -25,7 +24,7 @@ public class UserServiceImpl implements UserService {
             log.error(UserErrorMessages.USER_ALREADY_FOUND + " {}", user.getEmail());
             throw new EntityNotFoundException(UserErrorMessages.USER_ALREADY_FOUND + user.getEmail());
         }
-        userRepository.save(buildUser(user));
+        userRepository.save(build(user));
         return user;
     }
 
@@ -34,14 +33,13 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmail(email).orElse(null);
     }
 
-    private User buildUser(User user) {
-        User newUser = new User();
-
-        newUser.setEmail(user.getEmail());
-        newUser.setRole(user.getRole());
-        newUser.setName(user.getName());
-        newUser.setPassword(user.getPassword());
-
-        return newUser;
+    private User build(User user) {
+        return User.UserBuilder
+                .anUser()
+                .withName(user.getName())
+                .withEmail(user.getEmail())
+                .withPassword(user.getPassword())
+                .withRole(user.getRole())
+                .build();
     }
 }

@@ -37,4 +37,40 @@ public class Company {
     public void setMovies(Set<Movie> movies) {
         this.movies = movies;
     }
+
+    public static final class CompanyBuilder {
+        private long id;
+        private String name;
+        private Set<Movie> movies;
+
+        private CompanyBuilder() {
+        }
+
+        public static CompanyBuilder aCompany() {
+            return new CompanyBuilder();
+        }
+
+        public CompanyBuilder withId(long id) {
+            this.id = id;
+            return this;
+        }
+
+        public CompanyBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public CompanyBuilder withMovies(Set<Movie> movies) {
+            this.movies = movies;
+            return this;
+        }
+
+        public Company build() {
+            Company company = new Company();
+            company.setId(id);
+            company.setName(name);
+            company.setMovies(movies);
+            return company;
+        }
+    }
 }
