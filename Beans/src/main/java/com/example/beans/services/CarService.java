@@ -3,6 +3,7 @@ package com.example.beans.services;
 import com.example.beans.components.HybridCar;
 import com.example.beans.components.NewGenerationCar;
 import com.example.beans.components.OldGenerationCar;
+import com.example.beans.components.PetrolOldGenerationCar;
 import com.example.beans.configuration.ConfigurationProperties;
 import com.example.beans.pojo.Mechanic;
 import com.example.beans.pojo.PrototypeBean;
@@ -41,10 +42,10 @@ public class CarService {
     private NewGenerationCar newGenerationCar;
 
     // setter injection
-    @Autowired
-    public void setPetrolCar(OldGenerationCar petrolOldGenerationCar) {
-        this.petrolOldGenerationCar = petrolOldGenerationCar;
-    }
+//    @Autowired
+//    public void setPetrolCar(OldGenerationCar petrolOldGenerationCar) {
+//        this.petrolOldGenerationCar = petrolOldGenerationCar;
+//    }
 
     @Autowired
     private ApplicationContext applicationContext;
@@ -57,7 +58,9 @@ public class CarService {
 
     @Autowired
     private ConfigurationProperties configurationProperties;
-
+ public CarService(OldGenerationCar petrolOldGenerationCar){
+     this.petrolOldGenerationCar = petrolOldGenerationCar;
+ }
     public void testCar() {
         // types of injection
         // postconstruct and predestroy
