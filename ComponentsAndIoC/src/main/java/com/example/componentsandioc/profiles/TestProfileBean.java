@@ -16,6 +16,5 @@ public class TestProfileBean implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info(notDevProperty);
-
     }
 }
