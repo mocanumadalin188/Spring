@@ -16,11 +16,11 @@ public class SpecialRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-    log.info("SpecialRunner");
-    log.info(String.valueOf(singletonBean.getPrototypeBean().hashCode()));
-    log.info(String.valueOf(singletonBean.getPrototypeBean().hashCode()));
-
-        log.info(String.valueOf(singletonBean.getPrototypeBean2().hashCode()));
-        log.info(String.valueOf(singletonBean.getPrototypeBean2().hashCode()));
+//    log.info("SpecialRunner");
+//    log.info(String.valueOf(singletonBean.getPrototypeBean().hashCode()));
+//    log.info(String.valueOf(singletonBean.getPrototypeBean().hashCode()));
+//
+//        log.info(String.valueOf(singletonBean.getPrototypeBean2().hashCode()));
+//        log.info(String.valueOf(singletonBean.getPrototypeBean2().hashCode()));
     }
 }
