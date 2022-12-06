@@ -25,11 +25,12 @@ public class PersonDAOImpl implements PersonDAO {
 
     @Override
     public void save(Person person) {
-        String query = "insert into Person (lastName, firstName, address, city) values (?,?,?,?)";
+        String query = "insert into Person (last_name, first_name, address, city) values (?,?,?,?)";
         Connection con = null;
         PreparedStatement ps = null;
         try {
             con = dataSource.getConnection();
+            con.setAutoCommit(false);
             ps = con.prepareStatement(query);
 
             ps.setString(1, person.getLastName());
@@ -73,7 +74,7 @@ public class PersonDAOImpl implements PersonDAO {
             rs = ps.executeQuery();
 
             if (rs.next()) {
-                person = new Person(id, rs.getString("lastName"), rs.getString("firstName"),
+                person = new Person(id, rs.getString("last_name"), rs.getString("first_name"),
                         rs.getString("address"), rs.getString("city"));
                 log.info("Person Found::" + person);
             } else {
@@ -100,9 +101,10 @@ public class PersonDAOImpl implements PersonDAO {
         PreparedStatement ps = null;
         try {
             con = dataSource.getConnection();
+            con.setAutoCommit(false);
             ps = con.prepareStatement(query);
 
-            ps.setString(1, person.getAddress());
+            ps.setString(1, "updatedAddress");
             ps.setLong(2, person.getId());
 
             int out = ps.executeUpdate();
@@ -171,8 +173,8 @@ public class PersonDAOImpl implements PersonDAO {
                 Person person = new Person();
 
                 person.setId(rs.getLong("id"));
-                person.setLastName(rs.getString("lastName"));
-                person.setFirstName(rs.getString("firstName"));
+                person.setLastName(rs.getString("last_name"));
+                person.setFirstName(rs.getString("first_name"));
                 person.setAddress(rs.getString("address"));
                 person.setCity(rs.getString("city"));
 
