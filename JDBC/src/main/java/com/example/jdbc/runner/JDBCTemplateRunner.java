@@ -17,6 +17,9 @@ public class JDBCTemplateRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+        // PENTRU TESTARE SCHMBATI {args[0]} cu 1 sau RULARE CU LINIA DE COMANDA    - ARGUMENT 1
+
+
 //        String query = "SELECT * FROM person WHERE ID = ?";
 //        Person person = jdbcTemplate.queryForObject(
 //                query, new Object[]{args[0]}, new PersonRowMapper());

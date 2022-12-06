@@ -59,4 +59,15 @@ public class Person {
     public void setCity(String city) {
         this.city = city;
     }
+
+    @Override
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(firstName);
+        stringBuilder.append(",");
+        stringBuilder.append(lastName);
+        stringBuilder.append(",");
+        stringBuilder.append(city);
+        return stringBuilder.toString();
+    }
 }
