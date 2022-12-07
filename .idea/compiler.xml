@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="JDBC" />
+        <module name="AOP" />
+        <module name="Beans" />
+        <module name="SpringDataHibernate" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="AOP" target="17" />
+      <module name="Beans" target="17" />
+      <module name="JDBC" target="17" />
+      <module name="SpringDataHibernate" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AOP" options="-parameters" />
+      <module name="Beans" options="-parameters" />
+      <module name="JDBC" options="-parameters" />
+      <module name="SpringDataHibernate" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -27,7 +27,8 @@ public class ActorSimpleRepositoryImpl implements ActorSimpleRepository {
                 entityTransaction.begin();
             }
             // TODO explain flush()
-            // set a property on actor , actor is managed by the persistence context , it will be inserted with the new property
+            // set a property on actor , actor is managed by the persistence context ,
+            //                    it will be inserted with the new property
             entityManager.persist(actor);
             entityTransaction.commit();
             return actor;

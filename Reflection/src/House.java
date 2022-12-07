@@ -1,6 +1,6 @@
 public class House extends HouseParent {
 
-    protected String field;
+    protected String fieldOfChoice;
     public void method1(String str) {
         System.out.println(str);
     }

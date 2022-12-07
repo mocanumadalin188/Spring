@@ -23,7 +23,7 @@ public class Movie {
             inverseJoinColumns = @JoinColumn(name = "actor_id"))
     private Set<Actor> actors;
 
-    @ManyToOne
+    @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "company_id", nullable = false)
     private Company company;
 

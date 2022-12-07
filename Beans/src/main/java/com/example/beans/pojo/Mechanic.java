@@ -16,11 +16,11 @@ public class Mechanic {
     // REMOVED IN JAVA 11 - need to add dependency to use them
     @PostConstruct
     public void init() {
-        log.info("Executing after the bean gets into the application context");
+        log.info("Executing after the bean gets into the application context445");
     }
 
     @PreDestroy
     public void destroy() {
-        log.info("Executing before closing the application context");
+        log.info("Executing before closing the application context665");
     }
 }

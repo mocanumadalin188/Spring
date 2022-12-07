@@ -17,7 +17,7 @@ public class Soundtrack {
     @JoinColumn(name = "movie_id")
     private Movie movie;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "soundtrack_song",
             joinColumns = @JoinColumn(name = "soundtrack_id"),
