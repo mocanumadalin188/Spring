@@ -17,16 +17,16 @@ public class EntityManagerRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Review ourReview = new Review();
-        ourReview.setRating(8);
-        ourReview.setMessage("We like it!");
-//        ourReview.setId(2);  nu se poate seta - odata ce este autogenerat
-
-//        reviewSimpleRepository.save(ourReview);
-
-//        reviewSimpleRepository.updateRating(ourReview);
-
-        reviewSimpleRepository.updateExistentReview(5);
+//        Review ourReview = new Review();
+//        ourReview.setRating(8);
+//        ourReview.setMessage("We like it!");
+////        ourReview.setId(2);  nu se poate seta - odata ce este autogenerat
+//
+////        reviewSimpleRepository.save(ourReview);
+//
+////        reviewSimpleRepository.updateRating(ourReview);
+//
+//        reviewSimpleRepository.updateExistentReview(5);
 
     }
 }

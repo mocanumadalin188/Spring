@@ -4,11 +4,12 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity(name = "COMPANY")
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"name"})})
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String name;
     @OneToMany(mappedBy = "company")
     private List<Movie> movies;
