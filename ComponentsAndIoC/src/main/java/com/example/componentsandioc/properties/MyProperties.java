@@ -1,12 +1,12 @@
 package com.example.componentsandioc.properties;
 
-
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties (prefix = "properties.prefix")
+@ConfigurationProperties(prefix = "properties.prefix")
 public class MyProperties {
+
     private String myProperty1;
     private String myProperty2;
 
@@ -26,4 +26,3 @@ public class MyProperties {
         this.myProperty2 = myProperty2;
     }
 }
-

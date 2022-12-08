@@ -1,6 +1,5 @@
 package com.example.componentsandioc.profiles;
 
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -13,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class DevProfileBean implements CommandLineRunner {
 
     @Value("${properties.prefix.newProperty}")
-    private String newProperty;
+    private String newPropertyDev;
 
     @Value("${properties.prefix.myProperty2}")
     private String overridenProperty;
@@ -23,8 +22,6 @@ public class DevProfileBean implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        log.info(newProperty);
-        log.info(overridenProperty);
-        log.info(oldProperty);
+        log.info(newPropertyDev + "," + overridenProperty + "," + oldProperty);
     }
 }
