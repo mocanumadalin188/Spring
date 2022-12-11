@@ -1,0 +1,14 @@
+com\finalproject\mvc\config\SecurityConfiguration.class
+com\finalproject\mvc\entity\Actor$ActorBuilder.class
+com\finalproject\mvc\entity\Movie.class
+com\finalproject\mvc\service\UserServiceImpl.class
+com\finalproject\mvc\entity\Movie$MovieBuilder.class
+com\finalproject\mvc\repository\UserRepository.class
+com\finalproject\mvc\entity\Actor.class
+com\finalproject\mvc\controller\UserRegistrationController.class
+com\finalproject\mvc\entity\User.class
+com\finalproject\mvc\controller\MainController.class
+com\finalproject\mvc\entity\Role.class
+com\finalproject\mvc\FinalProjectMvcApplication.class
+com\finalproject\mvc\controller\dto\UserRegistrationDto.class
+com\finalproject\mvc\service\UserService.class
