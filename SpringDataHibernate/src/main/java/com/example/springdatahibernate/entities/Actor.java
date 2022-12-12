@@ -2,6 +2,7 @@ package com.example.springdatahibernate.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -16,6 +17,8 @@ public class Actor {
     private String name;
     @Column(name = "age")
     private String age;
+
+    @JsonBackReference
     @ManyToMany(mappedBy = "actors")
     private Set<Movie> movies;
 

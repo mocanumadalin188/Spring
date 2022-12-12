@@ -1,5 +1,6 @@
 package com.example.springdatahibernate.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -18,7 +19,8 @@ public class Movie {
 
     @Column(name = "type")
     private String type;
-@JsonIgnore
+
+    @JsonManagedReference
     @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "movie_actor",
@@ -26,12 +28,13 @@ public class Movie {
             inverseJoinColumns = @JoinColumn(name = "actor_id"))
     private Set<Actor> actors;
 
-//    @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "company_id", nullable = false)
     private Company company;
 
-    @OneToOne(mappedBy = "movie", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY, optional = false)
+    @OneToOne(mappedBy = "movie", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JsonBackReference
     private Soundtrack soundtrack;
 
     public long getId() {

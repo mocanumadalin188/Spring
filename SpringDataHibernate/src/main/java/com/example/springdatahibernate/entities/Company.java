@@ -1,5 +1,7 @@
 package com.example.springdatahibernate.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -12,6 +14,7 @@ public class Company {
     @Column(name = "name", unique = true)
     private String name;
     @OneToMany(mappedBy = "company")
+    @JsonBackReference
     private List<Movie> movies;
 
     public long getId() {

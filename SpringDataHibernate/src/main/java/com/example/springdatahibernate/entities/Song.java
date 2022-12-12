@@ -1,5 +1,7 @@
 package com.example.springdatahibernate.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -17,6 +19,7 @@ public class Song {
     private String artist;
 
     @ManyToMany(mappedBy = "songs")
+    @JsonBackReference
     private Set<Soundtrack> soundtracks;
 
     public long getId() {
