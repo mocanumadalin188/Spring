@@ -1,5 +1,8 @@
 package com.example.springdatahibernate.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -15,7 +18,7 @@ public class Movie {
 
     @Column(name = "type")
     private String type;
-
+@JsonIgnore
     @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "movie_actor",
