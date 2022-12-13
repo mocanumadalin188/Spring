@@ -18,7 +18,8 @@ public class Actor {
     @Column(name = "age")
     private String age;
 
-    @JsonBackReference
+//    @JsonBackReference
+    @JsonManagedReference
     @ManyToMany(mappedBy = "actors")
     private Set<Movie> movies;
 

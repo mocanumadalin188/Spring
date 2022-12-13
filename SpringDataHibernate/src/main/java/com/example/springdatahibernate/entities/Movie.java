@@ -20,7 +20,8 @@ public class Movie {
     @Column(name = "type")
     private String type;
 
-    @JsonManagedReference
+//    @JsonManagedReference
+    @JsonBackReference
     @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "movie_actor",
