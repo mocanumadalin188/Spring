@@ -20,13 +20,13 @@ public class ObjectMapperRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        User userFound = userRepository.findByUserName("vasile");
-
-        log.info(objectMapper.writeValueAsString(userFound));
-
-        String jsonObject = objectMapper.writeValueAsString(userFound);
-        User userReturned = objectMapper.readValue(jsonObject, User.class);
-        log.info(userReturned.getUserName());
+//        User userFound = userRepository.findByUserName("vasile");
+//
+//        log.info(objectMapper.writeValueAsString(userFound));
+//
+//        String jsonObject = objectMapper.writeValueAsString(userFound);
+//        User userReturned = objectMapper.readValue(jsonObject, User.class);
+//        log.info(userReturned.getUserName());
 
 
 

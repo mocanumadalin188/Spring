@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("users")
 public class UserController {
@@ -15,7 +17,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody User user) {
+    public ResponseEntity<?> create(@Valid @RequestBody User user) {
         return new ResponseEntity<>(userService.save(user), HttpStatus.OK);
     }
 
