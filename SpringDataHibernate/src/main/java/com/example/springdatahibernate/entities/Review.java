@@ -1,6 +1,7 @@
 package com.example.springdatahibernate.entities;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity(name = "review")
 public class Review {
@@ -11,6 +12,10 @@ public class Review {
 
     @Column(name = "rating")
     private int rating;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column
+    private java.util.Date alDateTime;
 
     @Column(name = "message")
     private String message;
@@ -37,5 +42,13 @@ public class Review {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Date getAlDateTime() {
+        return alDateTime;
+    }
+
+    public void setAlDateTime(Date alDateTime) {
+        this.alDateTime = alDateTime;
     }
 }
