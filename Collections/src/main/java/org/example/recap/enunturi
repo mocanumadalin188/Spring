@@ -1,0 +1,13 @@
+1. Se dau doua liste, vrem sa afisam reuniunea dintre ele fara duplicate.
+2. se da o insiruire de paranteze. (() - wrong , (()) - correct
+ ())(
+3. se da o lista. Vrem sa luam primul element din lista care, apare de 2 ori;
+ex: 1, 3, 2, 2, 3 -> 2
+4. se da o lista L de string si inca un string X.
+vrem sa printam toate elem din L care au aceleasi litere ca si X
+ex:
+X = "speed"
+L = ["psede","ppsede","abc","xpsede"]
+output: "psede"
+
+5. sa ordonam un map dupa values;

@@ -29,6 +29,7 @@ public class MapMain {
         //vrem sa luam varsta persoaneai care are cnp-ul 222
         System.out.println(personMap.get(p10));
         System.out.println(personMap);
+        System.out.println("ddddd");
         System.out.println(personMap.values());
         System.out.println(personMap.keySet());
         for(Map.Entry<Person,Integer> entry : personMap.entrySet()){
