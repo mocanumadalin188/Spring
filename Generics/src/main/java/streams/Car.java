@@ -46,4 +46,14 @@ public class Car {
     public void setPassengers(List<Human> passengers) {
         this.passengers = passengers;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "wheels='" + wheels + '\'' +
+                ", year=" + year +
+                ", engine='" + engine + '\'' +
+                ", passengers=" + passengers +
+                '}';
+    }
 }
