@@ -7,8 +7,8 @@ public class BufferedStream {
         BufferedInputStream bufferedInputStream = null;
         BufferedOutputStream bufferedOutputStream = null;
         try {
-            bufferedInputStream = new BufferedInputStream(new FileInputStream("C:\\Users\\Cion\\Spring\\Generics\\src\\main\\java\\io\\bufferedStream.txt"));
-            bufferedOutputStream = new BufferedOutputStream(new FileOutputStream("C:\\Users\\Cion\\Spring\\Generics\\src\\main\\java\\io\\bufferedStream_out.txt"));
+            bufferedInputStream = new BufferedInputStream(new FileInputStream("/Users/romuluschitic/Spring/Generics/src/main/java/io/bufferedStream.txt"));
+            bufferedOutputStream = new BufferedOutputStream(new FileOutputStream("/Users/romuluschitic/Spring/Generics/src/main/java/io/bufferedStream_out.txt"));
             int nextByte;
             while ((nextByte = bufferedInputStream.read()) != -1) {
                 bufferedOutputStream.write(nextByte);
