@@ -1,6 +1,6 @@
 package basic;
 
-public class Person {
+public class PersonBasic {
     // HAS-A
     public String nume;
     public int varsta;
@@ -22,16 +22,16 @@ public class Person {
     // access modifier + nume_clasa
 
 
-    public Person(String n) {
+    public PersonBasic(String n) {
         nume = n;
         varsta = 12;
     }
 
-    public Person(int v) {
+    public PersonBasic(int v) {
         varsta = v;
     }
 
-    public Person(String nume, int varsta, char gen, int inaltime){
+    public PersonBasic(String nume, int varsta, char gen, int inaltime){
         this.nume = nume;
         this.varsta = varsta;
         this.gen = gen;
@@ -40,5 +40,17 @@ public class Person {
 
     public void seteaza(String nume) {
         this.nume = nume;
+    }
+
+    public void gateste(){
+
+    }
+
+    public static void respira(){
+
+    }
+
+    public boolean compara(PersonBasic p){
+        return p.varsta == this.varsta;
     }
 }
