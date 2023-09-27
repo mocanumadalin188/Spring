@@ -1,5 +1,7 @@
 package clase;
 
+import java.util.Objects;
+
 public class Autor {
     //nume prenume varsta
     private String nume;
@@ -42,5 +44,18 @@ public class Autor {
                 ", prenume='" + prenume + '\'' +
                 ", varsta=" + varsta +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Autor autor = (Autor) o;
+        return varsta == autor.varsta && Objects.equals(nume, autor.nume) && Objects.equals(prenume, autor.prenume);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nume, prenume, varsta);
     }
 }
