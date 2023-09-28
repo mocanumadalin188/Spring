@@ -1,5 +1,7 @@
 package clase;
 
+import wrappers.Constante;
+
 public class Main {
     public static void main(String[] args) {
         Autor a1 = new Autor("Viorel", "Andrei", 30);
@@ -48,6 +50,6 @@ public class Main {
 
         System.out.println(a1.equals(a2));
 
-
+        System.out.println(Constante.PI);
     }
 }

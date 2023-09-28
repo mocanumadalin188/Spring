@@ -2,7 +2,7 @@ package clase;
 
 import java.util.Objects;
 
-public class Autor {
+public final class Autor {
     //nume prenume varsta
     private String nume;
     private String prenume;
