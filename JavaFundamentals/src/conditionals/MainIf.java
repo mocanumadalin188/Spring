@@ -9,9 +9,16 @@ public class MainIf {
         if (s == 6) {
             System.out.println("Suma este 7");
         }
+        else if(s == 12){
+            System.out.println("s este 12");
+        }
+        else if(s == 13){
+            System.out.println("s este 13");
+        }
         else{
             System.out.println("Orice altceva");
         }
+        // elseif si else nu sunt obligatorii
 
         // vreau sa verific daca un string are 10 caracvtere . Daca da , o sa returnez un substring cu primele 5 caractere din el, iar daca nu ,atunci iau doar primele  3 caractere.
     }

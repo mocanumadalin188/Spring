@@ -27,6 +27,21 @@ public enum Days {
         return eng;
     }
 
-
+    public boolean egalitate(Days d1) {
+        boolean rezultat = true;
+        switch (d1) {
+            case LUNI:
+                System.out.println("abcccccc");
+                break;
+            case MARTI:
+                rezultat = false;
+                System.out.println("nu");
+                break;
+            default:
+                rezultat = false;
+                System.out.println("DDDD");
+        }
+        return rezultat;
+    }
 
 }

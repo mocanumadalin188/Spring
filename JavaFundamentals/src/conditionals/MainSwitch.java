@@ -3,7 +3,7 @@ package conditionals;
 public class MainSwitch {
     public static void main(String[] args) {
         //switch (variabila) {case [constante]: instructiuni; break;}
-        int x = 33;
+        int x = 6;
         int y = 4;
         int s = x + y;
         // byte , short , int , char , wrapperele lor , String , enum
