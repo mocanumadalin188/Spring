@@ -44,5 +44,13 @@ public class Main {
         String ls = String.valueOf(23);
         System.out.println(ls.replace("2", "45"));
         System.out.println(s1.replace("X", "prune"));
+
+        String k =  "abc";
+        String k2 = "bbb";
+        String k3 = k.concat(k2);
+        StringBuilder stringBuilder = new StringBuilder("oooo");
+        stringBuilder.append("string1");
+        stringBuilder.append(12);
+        System.out.println(stringBuilder.toString());
     }
 }

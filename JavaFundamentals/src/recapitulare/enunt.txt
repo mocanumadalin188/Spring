@@ -1,0 +1,37 @@
+3 clase: Autor, Carte si Pagina
+    Clasa Pagina: textul de pe pagina, ceva care ne spune daca pagina contine imagini
+    Clasa Carte: titlul cartii, paginile din carte, capitolele din carte(titlul),
+                 tipul cartii(presupnem ca exista doar 3 tipuri: proza, poezie, comedie, critica),
+                  limbile in care a fost tiparita
+    Clasa Autor: numele autorului, varsta, cartile pe care le-a scris
+
+CERINTE:
+         A)
+         1. Clasele cu getteri, setteri, constructori, equals si toString(scris de noi,
+         vom folosi StringBuilder), hashcode (generat).
+         2. Clasa Main cu o metoda main si facem obiecte de tip Autor, Carte
+         si Pagina si le populam.
+         3. Construiti un array de Autori care contine toti autorii facuti pana in momentul acela in main.
+
+         B)
+         1. Facem o metoda care intoarce numarul de pagini din fiecare carte scrisa de
+          autorul X.(daca autorul are 3 carti, prima 10 pagini,
+          a doua 5 pagini si a 3-a 15 pagini vom afisa [10, 5, 15]).
+         2. O metoda care intoarce toate cartile scris de un anumit autor X si
+         al caror titlu incepe si se termina cu un string Y.
+         3. O metoda care verifica daca doua carti sunt identice.
+         4. Construiti stringul X pentru fiecare autor in felul urmator: fiecare string va contine numele autorului urmat de varsta lui
+         concatenate cu titlurile cartile pe care le-au scris.
+         5. Puneti intr-un array toate cartile care au mai mult de X capitole si au fost tiparite intr-o singura limba si au fost scrise de autorul Z.
+         6. O metoda care intoarce toate paginile tuturor cartilor scrise de un anumit autor.
+
+
+         Pagina toString:
+                    Pagina: {text: textul de pe pagina,
+                            \t\t areImagini: valoare areImagini}
+
+         Carte toString:
+                    Carte: {\n
+                        \t Titlu: valoareTitlu, \n
+                        \t Pagini: for si punem in StringBuilder pagina respectiva(pagina.toString)
+                    }

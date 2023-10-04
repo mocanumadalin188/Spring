@@ -9,7 +9,7 @@ public class LoopMain {
         String[] str = new String[]{"s1", "s2sd23", "asddasdas", "asddasdsasdaasdds", "abc", "bddh"};
 //        i = 0 ,1 ,2
         // variabila de inceput ; conditie de oprire; pas de mers mai departe
-        for (int i = 1; i < str.length; i += 2) {
+        for (int i = 0; i < str.length; i += 1) {
             System.out.println(str[i].length());
         }
         //while
@@ -42,7 +42,7 @@ public class LoopMain {
         int[] x = new int[]{10, 20, 30};
         for (int k = 0; k < x.length; k++) {
             if (x[k] == 20) {
-                continue;
+                break;
             }
             System.out.println(x[k]);
         }
