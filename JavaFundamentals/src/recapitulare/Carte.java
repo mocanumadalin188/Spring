@@ -65,7 +65,7 @@ public class Carte {
     @Override
     public String toString(){
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Carte: {\n\t Titlu: ")
+        stringBuilder.append("\nCarte: {\n\t Titlu: ")
                 .append(titlu)
                 .append(", \n\t Pagini: ");
         for (Pagina paginaCurenta : pagini){
@@ -98,4 +98,24 @@ public class Carte {
         result = 31 * result + Arrays.hashCode(limbi);
         return result;
     }
+
+    public static Boolean verificaDouaCarti(Carte c1, Object c2){
+        return c1.equals(c2);
+    }
+
+    public int numarAparitii(String cuvant){
+        int numarAparitii = 0;
+        for (int i = 0; i < pagini.length; i++){
+            String textPaginaCurent = pagini[i].getText();
+            String[] cuvintePaginaCurenta = textPaginaCurent.split("[ .;]");
+            for (int j = 0; j < cuvintePaginaCurenta.length; j++) {
+                if (cuvant.equals(cuvintePaginaCurenta[j])) {
+                    //in stanga e de preferat sa punem ceva ce stim ca nu este null
+                    numarAparitii++;
+                }
+            }
+        }
+        return numarAparitii;
+    }
+
 }

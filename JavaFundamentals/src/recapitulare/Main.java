@@ -19,7 +19,7 @@ public class Main {
         cartiA1[1] = c2;
         Autor a1 = new Autor("Calin", 40, cartiA1);
 
-        Pagina p6 = new Pagina("Plec la mare", false);
+        Pagina p6 = new Pagina("Plec la mare;la", false);
         Pagina p7 = new Pagina("Acusi vine weekendul", false);
         Pagina p8 = new Pagina("Nu avem idei", false);
         Pagina p9 = new Pagina("Iubesc traficul de la 12", false);
@@ -29,16 +29,40 @@ public class Main {
         Autor a2 = new Autor("Anton", 60, new Carte[]{c3});
 
         Autor[] autori = new Autor[]{a1, a2};
+//
+//        System.out.println(Arrays.toString(a1.numaraPagini()));
+//
+//        Carte[] rez = a1.verificaTitlulCartilor("L");
+//        for (Carte c : rez){
+//            if (c != null){
+//                System.out.println(c);
+//            }
+//        }
 
-        System.out.println(Arrays.toString(a1.numaraPagini()));
 
-        Carte[] rez = a1.verificaTitlulCartilor("L");
-        for (Carte c : rez){
-            if (c != null){
-                System.out.println(c);
-            }
-        }
+        System.out.println(a1);
 
+        boolean aux = Carte.verificaDouaCarti(c1, c2);
+        System.out.println(aux);
+
+        Boolean aux2 = Carte.verificaDouaCarti(c1, c2);
+        System.out.println(aux2);
+
+        System.out.println(c1.hashCode());
+        System.out.println(c2.hashCode());
+        System.out.println(c1.hashCode());
+
+//        boolean aux = Carte.verificaDouaCarti(c1, a2);
+//        System.out.println(aux);
+
+        System.out.println(Arrays.toString(Autor.stringAutori(autori)));
+        System.out.println();
+
+        System.out.println(a1.titluriCart(0));
+
+        System.out.println(c3.numarAparitii("la"));
+
+        System.out.println(Arrays.toString(a1.printPagina("LuceafaruL", "cerintele")));
     }
 
 }

@@ -20,18 +20,35 @@ CERINTE:
          2. O metoda care intoarce toate cartile scris de un anumit autor X si
          al caror titlu incepe si se termina cu un string Y.
          3. O metoda care verifica daca doua carti sunt identice.
-         4. Construiti stringul X pentru fiecare autor in felul urmator: fiecare string va contine numele autorului urmat de varsta lui
-         concatenate cu titlurile cartile pe care le-au scris.
-         5. Puneti intr-un array toate cartile care au mai mult de X capitole si au fost tiparite intr-o singura limba si au fost scrise de autorul Z.
-         6. O metoda care intoarce toate paginile tuturor cartilor scrise de un anumit autor.
-
+         4. Construiti stringul X pentru fiecare autor in felul urmator: fiecare string va contine numele
+         autorului urmat de varsta lui concatenate cu titlurile cartile pe care le-au scris.
+         5. Returnati un string cu toate titlurile cartilor care au mai mult de X capitole si au
+         fost tiparite intr-o singura limba si au fost scrise de autorul Z.
+         6. O metoda care intoarce toate paginile tuturor cartilor scrise de un anumit autor. -TEMA
+         7. Verificati de cate ori apare in cartea X cuvantul Y.
+         8. Printati toate paginile cartii scrise de autorul X cu titlul Y pana cand se intalneste substringul Z
 
          Pagina toString:
                     Pagina: {text: textul de pe pagina,
                             \t\t areImagini: valoare areImagini}
 
          Carte toString:
-                    Carte: {\n
+                    , \nCarte: {\n
                         \t Titlu: valoareTitlu, \n
                         \t Pagini: for si punem in StringBuilder pagina respectiva(pagina.toString)
                     }
+
+                    Am 3 Autori: a1 - 2 carti
+                                 a2 - 3 carti
+                                 a3 - 7 carti
+
+                                 autor[i].carti.lenght;
+
+
+                                 8. O metoda care intoarce toate poeziile scrise de toti autorii.
+                                 9. Verificati de cate ori apare in cartea X cuvantul Y.
+                                 10. Printati toate paginile cartii scrise de autorul X cu titlul Y pana cand se intalneste cuvantul Z.
+                                 (daca la pagina 11 se gaseste cuvantul Z atunci se printeaza primele 10 pagini)
+                                 11. Printati toti autorii tuturor comediilor intr-un array nou.(param toti autorii)
+                                 12. Concatenati paginile impare ale cartii X si construiti o noua carte care are o singura pagina cu textul rezultat. Intre pagini folositi delimitatorul enter.
+                                 13.Printati intr-un array numai paginile unei anumite carti X in care apare cuvantul Y minim o data.
